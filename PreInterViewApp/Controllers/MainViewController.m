@@ -8,12 +8,15 @@
 
 #import "MainViewController.h"
 #import "NetworkHandler.h"
+#import "NetworkConstants.h"
+#import "AboutViewController.h"
 #import <CarbonKit/CarbonKit.h>
 
 @interface MainViewController ()<CarbonTabSwipeNavigationDelegate>
 {
     NSArray *items;
     CarbonTabSwipeNavigation *carbonTabSwipeNavigation;
+    BOOL menuViewShowed;
 }
 
 @end
@@ -22,6 +25,9 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    // set navigation
+    UIBarButtonItem* item=[[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"icon_hambuger"] style:UIBarButtonItemStyleDone target:self action:@selector(clickHambugerMenu:)];
+    [self.navigationItem setLeftBarButtonItem:item];
     items=@[@"Users",@"Setting"];
     // Do any additional setup after loading the view.
     carbonTabSwipeNavigation = [[CarbonTabSwipeNavigation alloc] initWithItems:items delegate:self];
@@ -29,6 +35,11 @@
     [self style];
     // get Users
     [[NetworkHandler getInstance] getUsers];
+}
+
+- (void) preAddView
+{
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -55,6 +66,7 @@
     [carbonTabSwipeNavigation setSelectedColor:color
                                           font:[UIFont boldSystemFontOfSize:14]];
 }
+
 # pragma mark - CarbonTabSwipeNavigation Delegate
 // required
 - (nonnull UIViewController *)carbonTabSwipeNavigation:(nonnull CarbonTabSwipeNavigation *)carbontTabSwipeNavigation
@@ -83,11 +95,20 @@
 
 - (void)carbonTabSwipeNavigation:(nonnull CarbonTabSwipeNavigation *)carbonTabSwipeNavigation
                   didMoveAtIndex:(NSUInteger)index {
-    NSLog(@"Did move at index: %ld", index);
+    NSLog(@"Did move at index: %ld", (unsigned long)index);
 }
 
 - (UIBarPosition)barPositionForCarbonTabSwipeNavigation:(nonnull CarbonTabSwipeNavigation *)carbonTabSwipeNavigation {
     return UIBarPositionTop; // default UIBarPositionTop
+}
+
+// handle when click Hambuger Menu
+- (void) clickHambugerMenu:(id) sender
+{
+    NSLog(@"clickLogoutButton");
+    [[NSUserDefaults standardUserDefaults] removeObjectForKey:KEY_EMAIL];
+    [[NSUserDefaults standardUserDefaults] removeObjectForKey:KEY_PASS];
+    [self.navigationController popToRootViewControllerAnimated:YES];
 }
 
 /*

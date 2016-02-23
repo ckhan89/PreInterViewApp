@@ -25,6 +25,8 @@
 		D88326C81C7AFAD0000BEC81 /* PreInterViewAppUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = D88326C71C7AFAD0000BEC81 /* PreInterViewAppUITests.m */; };
 		D8A362561C7C1D85002F1954 /* UserTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D8A362551C7C1D85002F1954 /* UserTableViewCell.m */; };
 		D8A3625A1C7C1F6A002F1954 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = D8A362591C7C1F6A002F1954 /* User.m */; };
+		D8B528811C7C513100B1C673 /* ImageSet.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D8B528801C7C513100B1C673 /* ImageSet.xcassets */; };
+		D8B528841C7C5D5300B1C673 /* AboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D8B528831C7C5D5300B1C673 /* AboutViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -84,6 +86,9 @@
 		D8A362551C7C1D85002F1954 /* UserTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserTableViewCell.m; sourceTree = "<group>"; };
 		D8A362581C7C1F6A002F1954 /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
 		D8A362591C7C1F6A002F1954 /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
+		D8B528801C7C513100B1C673 /* ImageSet.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = ImageSet.xcassets; sourceTree = "<group>"; };
+		D8B528821C7C5D5300B1C673 /* AboutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AboutViewController.h; sourceTree = "<group>"; };
+		D8B528831C7C5D5300B1C673 /* AboutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AboutViewController.m; sourceTree = "<group>"; };
 		F7B43F82CD836BB0FEE3F5EF /* Pods-PreInterViewApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PreInterViewApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PreInterViewApp/Pods-PreInterViewApp.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -145,6 +150,8 @@
 				D801298E1C7C12C600C77EDA /* UsersViewController.m */,
 				D80129901C7C12F800C77EDA /* SettingViewController.h */,
 				D80129911C7C12F800C77EDA /* SettingViewController.m */,
+				D8B528821C7C5D5300B1C673 /* AboutViewController.h */,
+				D8B528831C7C5D5300B1C673 /* AboutViewController.m */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -207,6 +214,7 @@
 				D88326B31C7AFAD0000BEC81 /* Info.plist */,
 				D88326AB1C7AFAD0000BEC81 /* PreInterViewApp.xcdatamodeld */,
 				D883269F1C7AFAD0000BEC81 /* Supporting Files */,
+				D8B528801C7C513100B1C673 /* ImageSet.xcassets */,
 			);
 			path = PreInterViewApp;
 			sourceTree = "<group>";
@@ -366,6 +374,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D8B528811C7C513100B1C673 /* ImageSet.xcassets in Resources */,
 				D88326B21C7AFAD0000BEC81 /* LaunchScreen.storyboard in Resources */,
 				D88326AF1C7AFAD0000BEC81 /* Assets.xcassets in Resources */,
 				D88326AA1C7AFAD0000BEC81 /* Main.storyboard in Resources */,
@@ -452,6 +461,7 @@
 				D8A3625A1C7C1F6A002F1954 /* User.m in Sources */,
 				D88326A11C7AFAD0000BEC81 /* main.m in Sources */,
 				D801D4531C7B6709000F448E /* WelcomeController.m in Sources */,
+				D8B528841C7C5D5300B1C673 /* AboutViewController.m in Sources */,
 				D80129921C7C12F800C77EDA /* SettingViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

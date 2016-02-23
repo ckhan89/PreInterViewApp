@@ -75,9 +75,8 @@
     [[NSUserDefaults standardUserDefaults] setObject:_emailTextField.text forKey:KEY_EMAIL];
     [[NSUserDefaults standardUserDefaults] setObject:_passwordTextField.text forKey:KEY_PASS];
     //
-    UIStoryboard* storyBoard=[UIStoryboard storyboardWithName:@"Main" bundle:nil];
-    MainViewController* mainController=[storyBoard instantiateViewControllerWithIdentifier:@"MainViewController"];
-    [self.navigationController pushViewController:mainController animated:YES];
+    MainViewController* mainController=[self.storyboard instantiateViewControllerWithIdentifier:@"MainViewController"];
+    [self.navigationController pushViewController:mainController animated:NO];
 }
 
 // handle when request login fail
