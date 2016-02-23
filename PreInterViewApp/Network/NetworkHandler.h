@@ -18,8 +18,5 @@
 
 - (void) getUsers;
 
-//- (void) getListnewFeeds;
-//
-//- (void) updateNewsWithData:(id) responseObject;
 
 @end
