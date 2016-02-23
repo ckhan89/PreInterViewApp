@@ -7,6 +7,9 @@
 //
 
 #import "AppDelegate.h"
+#import "NetworkConstants.h"
+#import "NotiConstants.h"
+#import <Parse/Parse.h>
 
 @interface AppDelegate ()
 
@@ -17,6 +20,16 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    [Parse setApplicationId:@"HW8PTFoJMdHpidiXMXORO5hfhz6Yn0DtWJKx0GH2"
+                  clientKey:@"B64oHriILlse3qtBqyq0uTrPzjbAETyzFBrPcMny"];
+    // Let the device know we want to receive push notifications
+    UIUserNotificationType userNotificationTypes = (UIUserNotificationTypeAlert |
+                                                    UIUserNotificationTypeBadge |
+                                                    UIUserNotificationTypeSound);
+    UIUserNotificationSettings *settings = [UIUserNotificationSettings settingsForTypes:userNotificationTypes
+                                                                             categories:nil];
+    [application registerUserNotificationSettings:settings];
+    [application registerForRemoteNotifications];
     return YES;
 }
 
@@ -121,6 +134,29 @@
             NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
             abort();
         }
+    }
+}
+
+- (void)application:(UIApplication*)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData*)deviceToken
+{
+    NSLog(@"My token is: %@", deviceToken);
+    PFInstallation *currentInstallation = [PFInstallation currentInstallation];
+    [currentInstallation setDeviceTokenFromData:deviceToken];
+    currentInstallation.channels = @[ @"global" ];
+    [currentInstallation saveInBackground];
+}
+
+- (void)application:(UIApplication*)application didFailToRegisterForRemoteNotificationsWithError:(NSError*)error
+{
+    NSLog(@"Failed to get token, error: %@", error);
+
+}
+
+- (void) application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo{
+    NSLog(@"UserInfo:%@",userInfo.description);
+//    [PFPush handlePush:userInfo];
+    if ([[NSUserDefaults standardUserDefaults] objectForKey:KEY_EMAIL]) {
+        [[NSNotificationCenter defaultCenter] postNotificationName:NEW_USER object:nil];
     }
 }
 
