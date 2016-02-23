@@ -351,35 +351,5 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RDO-f2-uJl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
         </scene>
-        <!--About View Controller-->
-        <scene sceneID="Um1-7f-0sK">
-            <objects>
-                <viewController storyboardIdentifier="AboutViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Hzx-lw-drc" customClass="AboutViewController" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="wJH-Tn-U7J"/>
-                        <viewControllerLayoutGuide type="bottom" id="EQ5-Wo-aKD"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="bMG-AT-DDC">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="This is the About Page" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gyi-b3-0BU">
-                                <rect key="frame" x="214" y="290" width="172" height="20.5"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="gyi-b3-0BU" firstAttribute="centerX" secondItem="bMG-AT-DDC" secondAttribute="centerX" id="gEW-k5-7ly"/>
-                            <constraint firstItem="gyi-b3-0BU" firstAttribute="centerY" secondItem="bMG-AT-DDC" secondAttribute="centerY" id="sLJ-iT-thO"/>
-                        </constraints>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="mJI-zv-mWd" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="323" y="198"/>
-        </scene>
     </scenes>
 </document>
